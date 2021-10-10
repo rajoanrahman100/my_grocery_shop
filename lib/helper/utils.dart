@@ -11,7 +11,38 @@ class Utils{
         icon: IconFontHelper.MEATS,
         imageName: 'cat1',
         name: "Meats",
-        subCategory: []
+        subCategory: [
+          SubCategory(
+            color: AppColors.MEATS,
+            icon: IconFontHelper.MEATS,
+            imageName: 'cat1_1',
+            name: "Cerdo",
+          ),
+          SubCategory(
+            color: AppColors.MEATS,
+            icon: IconFontHelper.MEATS,
+            imageName: 'cat1_2',
+            name: "Vaca",
+          ),
+          SubCategory(
+            color: AppColors.MEATS,
+            icon: IconFontHelper.MEATS,
+            imageName: 'cat1_3',
+            name: "Gallina",
+          ),
+          SubCategory(
+            color: AppColors.MEATS,
+            icon: IconFontHelper.MEATS,
+            imageName: 'cat1_4',
+            name: "Pavo",
+          ),
+          SubCategory(
+            color: AppColors.MEATS,
+            icon: IconFontHelper.MEATS,
+            imageName: 'cat1_5',
+            name: "Chivo",
+          ),
+        ]
       ),
       Category(
           color: AppColors.FRUITS,

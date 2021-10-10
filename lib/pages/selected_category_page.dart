@@ -1,12 +1,81 @@
 import 'package:flutter/material.dart';
+import 'package:my_grocery_shop/helper/appcolors.dart';
+import 'package:my_grocery_shop/helper/icon_hepler.dart';
+import 'package:my_grocery_shop/model/category.dart';
+import 'package:my_grocery_shop/widgets/category_icon.dart';
+import 'package:my_grocery_shop/widgets/icon_font.dart';
 
 class SelectedCategoryPage extends StatelessWidget {
-  const SelectedCategoryPage({Key? key}) : super(key: key);
+
+  List<SubCategory> subCategoryList=[];
+  String categoryName;
+  Color color;
+  String iconName;
+
+  SelectedCategoryPage({required this.subCategoryList,required this.categoryName, required this.color,required this.iconName});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0.0,
+        centerTitle: true,
+        title: IconFont(
+          iconSize: 30,
+          iconName: IconFontHelper.LOGO,
+          color: AppColors.MAIN_COLOR,
+        ),
+        iconTheme: IconThemeData(color: AppColors.MAIN_COLOR),
+        actions: const [
+          Icon(
+            Icons.filter_alt_outlined,
+            color: AppColors.MAIN_COLOR,
+          ),
+          SizedBox(
+            width: 10,
+          )
+        ],
+      ),
+      body: Column(
+        children: [
+          SizedBox(height: 30,),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              CategoryIcons(
+                color: color,
+                iconName: iconName,
+              ),
+              SizedBox(width: 10),
+              Text(categoryName,style: TextStyle(
+                color: color,fontSize: 20
+              ),)
+            ],
+          ),
 
+          const SizedBox(height: 30,),
+          Expanded(
+            child: GridView.count(
+              crossAxisCount: 2,
+              children: List.generate(subCategoryList.length, (index){
+                return Container(
+                  child: Column(
+                    children: [
+                      ClipOval(
+                        child: Image.asset("assets/imgs/" +subCategoryList[index].imageName!+'.png',fit: BoxFit.cover,height: 100,width: 100,),
+                      ),
+                      Text(subCategoryList[index].name!,style: TextStyle(color:color),)
+                    ],
+                  ),
+                );
+              },
+            )
+            ),
+          )
+
+        ],
+      ),
     );
   }
 }

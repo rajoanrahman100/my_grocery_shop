@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_grocery_shop/helper/constants.dart';
 import 'package:my_grocery_shop/helper/icon_hepler.dart';
+import 'package:my_grocery_shop/pages/category_list_page.dart';
 import 'package:my_grocery_shop/widgets/icon_font.dart';
 
 class WelcomeScreen extends StatelessWidget {
@@ -48,7 +49,13 @@ class WelcomeScreen extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 10.0),
                     child: MaterialButton(
-                      onPressed: (){},
+                      onPressed: (){
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => CategoryListPage()),
+                        );
+                      },
                       shape: const StadiumBorder(),
                       height: 55,
                       minWidth: double.infinity,

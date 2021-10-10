@@ -4,6 +4,7 @@ import 'package:my_grocery_shop/helper/constants.dart';
 import 'package:my_grocery_shop/helper/icon_hepler.dart';
 import 'package:my_grocery_shop/helper/utils.dart';
 import 'package:my_grocery_shop/model/category.dart';
+import 'package:my_grocery_shop/pages/selected_category_page.dart';
 import 'package:my_grocery_shop/widgets/category_icon.dart';
 import 'package:my_grocery_shop/widgets/categoty_bottom_bar.dart';
 import 'package:my_grocery_shop/widgets/icon_font.dart';
@@ -48,8 +49,18 @@ class CategoryListPage extends StatelessWidget {
                   child: ListView.builder(
                     itemBuilder: (_, index) {
                       return GestureDetector(
-                        onTap: (){
-                          debugPrint("index $index");
+                        onTap: () {
+                          debugPrint("index ${categoryList[index].subCategory}");
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => SelectedCategoryPage(
+                                      subCategoryList: categoryList[index].subCategory,
+                                  categoryName: categoryList[index].name!,
+                                  color:categoryList[index].color!,
+                                  iconName:categoryList[index].icon!
+                                    )),
+                          );
                         },
                         child: Container(
                           height: 150,
@@ -117,4 +128,3 @@ class CategoryListPage extends StatelessWidget {
         ));
   }
 }
-
