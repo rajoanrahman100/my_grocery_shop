@@ -1,6 +1,7 @@
 import 'package:my_grocery_shop/helper/appcolors.dart';
 import 'package:my_grocery_shop/helper/icon_hepler.dart';
 import 'package:my_grocery_shop/model/category.dart';
+import 'package:my_grocery_shop/model/subcategory.dart';
 
 class Utils{
 
@@ -15,32 +16,142 @@ class Utils{
           SubCategory(
             color: AppColors.MEATS,
             icon: IconFontHelper.MEATS,
-            imageName: 'cat1_1',
-            name: "Cerdo",
+            imageName: 'cat1_2',
+            name: "Vaca",
+            categoryParts: [
+              CategoryParts(
+                name: "Jamon",
+                image: 'cat1_1_p1',
+                isSelected: false
+              ),
+              CategoryParts(
+                  name: "Patas",
+                  image: 'cat1_1_p2',
+                  isSelected: false
+              ),
+              CategoryParts(
+                  name: "Tocineta",
+                  image: 'cat1_1_p3',
+                  isSelected: false
+              ),
+              CategoryParts(
+                  name: "Lamo",
+                  image: 'cat1_1_p4',
+                  isSelected: false
+              )
+            ],
           ),
           SubCategory(
             color: AppColors.MEATS,
             icon: IconFontHelper.MEATS,
             imageName: 'cat1_2',
             name: "Vaca",
+            categoryParts: [
+              CategoryParts(
+                  name: "Jamon",
+                  image: 'cat1_1_p1',
+                  isSelected: false
+              ),
+              CategoryParts(
+                  name: "Patas",
+                  image: 'cat1_1_p2',
+                  isSelected: false
+              ),
+              CategoryParts(
+                  name: "Tocineta",
+                  image: 'cat1_1_p3',
+                  isSelected: false
+              ),
+              CategoryParts(
+                  name: "Lamo",
+                  image: 'cat1_1_p4',
+                  isSelected: false
+              )
+            ],
           ),
           SubCategory(
             color: AppColors.MEATS,
             icon: IconFontHelper.MEATS,
             imageName: 'cat1_3',
             name: "Gallina",
+            categoryParts: [
+              CategoryParts(
+                  name: "Jamon",
+                  image: 'cat1_1_p1',
+                  isSelected: false
+              ),
+              CategoryParts(
+                  name: "Patas",
+                  image: 'cat1_1_p2',
+                  isSelected: false
+              ),
+              CategoryParts(
+                  name: "Tocineta",
+                  image: 'cat1_1_p3',
+                  isSelected: false
+              ),
+              CategoryParts(
+                  name: "Lamo",
+                  image: 'cat1_1_p4',
+                  isSelected: false
+              )
+            ],
           ),
           SubCategory(
             color: AppColors.MEATS,
             icon: IconFontHelper.MEATS,
             imageName: 'cat1_4',
             name: "Pavo",
+            categoryParts: [
+              CategoryParts(
+                  name: "Jamon",
+                  image: 'cat1_1_p1',
+                  isSelected: false
+              ),
+              CategoryParts(
+                  name: "Patas",
+                  image: 'cat1_1_p2',
+                  isSelected: false
+              ),
+              CategoryParts(
+                  name: "Tocineta",
+                  image: 'cat1_1_p3',
+                  isSelected: false
+              ),
+              CategoryParts(
+                  name: "Lamo",
+                  image: 'cat1_1_p4',
+                  isSelected: false
+              )
+            ],
           ),
           SubCategory(
             color: AppColors.MEATS,
             icon: IconFontHelper.MEATS,
             imageName: 'cat1_5',
             name: "Chivo",
+            categoryParts: [
+              CategoryParts(
+                  name: "Jamon",
+                  image: 'cat1_1_p1',
+                  isSelected: false
+              ),
+              CategoryParts(
+                  name: "Patas",
+                  image: 'cat1_1_p2',
+                  isSelected: false
+              ),
+              CategoryParts(
+                  name: "Tocineta",
+                  image: 'cat1_1_p3',
+                  isSelected: false
+              ),
+              CategoryParts(
+                  name: "Lamo",
+                  image: 'cat1_1_p4',
+                  isSelected: false
+              )
+            ],
           ),
         ]
       ),
@@ -49,7 +160,7 @@ class Utils{
           icon: IconFontHelper.FRUITS,
           imageName: 'cat2',
           name: "Fruits",
-          subCategory: []
+          subCategory: [],
       ),
       Category(
           color: AppColors.VEGS,

@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:my_grocery_shop/helper/appcolors.dart';
 import 'package:my_grocery_shop/helper/icon_hepler.dart';
-import 'package:my_grocery_shop/model/category.dart';
+import 'package:my_grocery_shop/model/subcategory.dart';
+import 'package:my_grocery_shop/pages/details_page.dart';
 import 'package:my_grocery_shop/widgets/category_icon.dart';
 import 'package:my_grocery_shop/widgets/icon_font.dart';
 
 class SelectedCategoryPage extends StatelessWidget {
-
-  List<SubCategory> subCategoryList=[];
+  List<SubCategory> subCategoryList = [];
   String categoryName;
   Color color;
   String iconName;
 
-  SelectedCategoryPage({required this.subCategoryList,required this.categoryName, required this.color,required this.iconName});
+  SelectedCategoryPage({required this.subCategoryList, required this.categoryName, required this.color, required this.iconName});
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +39,9 @@ class SelectedCategoryPage extends StatelessWidget {
       ),
       body: Column(
         children: [
-          SizedBox(height: 30,),
+          SizedBox(
+            height: 30,
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -48,32 +50,53 @@ class SelectedCategoryPage extends StatelessWidget {
                 iconName: iconName,
               ),
               SizedBox(width: 10),
-              Text(categoryName,style: TextStyle(
-                color: color,fontSize: 20
-              ),)
+              Text(
+                categoryName,
+                style: TextStyle(color: color, fontSize: 20),
+              )
             ],
           ),
-
-          const SizedBox(height: 30,),
+          const SizedBox(
+            height: 30,
+          ),
           Expanded(
             child: GridView.count(
-              crossAxisCount: 2,
-              children: List.generate(subCategoryList.length, (index){
-                return Container(
-                  child: Column(
-                    children: [
-                      ClipOval(
-                        child: Image.asset("assets/imgs/" +subCategoryList[index].imageName!+'.png',fit: BoxFit.cover,height: 100,width: 100,),
+                crossAxisCount: 2,
+                children: List.generate(
+                  subCategoryList.length,
+                  (index) {
+                    return GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => DetailsPage(
+                                    imageName: subCategoryList[index].imageName,
+                                color: subCategoryList[index].color,
+                                iconName: subCategoryList[index].icon,
+                                  )),
+                        );
+                      },
+                      child: Column(
+                        children: [
+                          ClipOval(
+                            child: Image.asset(
+                              "assets/imgs/" + subCategoryList[index].imageName! + '.png',
+                              fit: BoxFit.cover,
+                              height: 100,
+                              width: 100,
+                            ),
+                          ),
+                          Text(
+                            subCategoryList[index].name!,
+                            style: TextStyle(color: color),
+                          )
+                        ],
                       ),
-                      Text(subCategoryList[index].name!,style: TextStyle(color:color),)
-                    ],
-                  ),
-                );
-              },
-            )
-            ),
+                    );
+                  },
+                )),
           )
-
         ],
       ),
     );

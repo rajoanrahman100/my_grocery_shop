@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_grocery_shop/model/subcategory.dart';
 
 class Category{
   String? name;
@@ -12,13 +13,3 @@ class Category{
 }
 
 
-class SubCategory{
-  String? name;
-  String? icon;
-  Color? color;
-  String? imageName;
-  //List<Category?> subCategory;
-
-  SubCategory({this.name,this.icon,this.color,this.imageName});
-
-}

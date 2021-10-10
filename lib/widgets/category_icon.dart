@@ -7,10 +7,12 @@ class CategoryIcons extends StatelessWidget {
     Key? key,
     required this.color,
     required this.iconName,
+    this.size,
   }) : super(key: key);
 
   final Color color;
   final String iconName;
+  final double? size;
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +22,7 @@ class CategoryIcons extends StatelessWidget {
         padding: const EdgeInsets.all(10.0),
         child: IconFont(
           color: kWhiteColor,
-          iconSize: 30,
+          iconSize:size ?? 30.0,
           iconName: iconName,
         ),
       ),
