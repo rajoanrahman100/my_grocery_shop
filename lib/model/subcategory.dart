@@ -5,7 +5,7 @@ class SubCategory{
   String? icon;
   Color? color;
   String? imageName;
-  List<CategoryParts?> categoryParts;
+  List<CategoryParts> categoryParts;
 
   SubCategory({this.name,this.icon,this.color,this.imageName,required this.categoryParts});
 

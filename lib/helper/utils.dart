@@ -21,22 +21,22 @@ class Utils{
             categoryParts: [
               CategoryParts(
                 name: "Jamon",
-                image: 'cat1_1_p1',
+                image: 'cat1_2_p1',
                 isSelected: false
               ),
               CategoryParts(
                   name: "Patas",
-                  image: 'cat1_1_p2',
+                  image: 'cat1_2_p2',
                   isSelected: false
               ),
               CategoryParts(
                   name: "Tocineta",
-                  image: 'cat1_1_p3',
+                  image: 'cat1_2_p3',
                   isSelected: false
               ),
               CategoryParts(
                   name: "Lamo",
-                  image: 'cat1_1_p4',
+                  image: 'cat1_2_p4',
                   isSelected: false
               )
             ],

@@ -74,6 +74,7 @@ class SelectedCategoryPage extends StatelessWidget {
                                     imageName: subCategoryList[index].imageName,
                                 color: subCategoryList[index].color,
                                 iconName: subCategoryList[index].icon,
+                                categoryParts: subCategoryList[index].categoryParts,
                                   )),
                         );
                       },
