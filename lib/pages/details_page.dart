@@ -112,7 +112,12 @@ class _DetailsPageState extends State<DetailsPage> {
                     return GestureDetector(
                       onTap: (){
                         //Change the state of selected Items
+                        setState(() {
+                          widget.categoryParts!.forEach((CategoryParts element) {
+                            element.isSelected=widget.categoryParts![index]!=element;
 
+                          });
+                        });
                       },
                       child: Column(
                         children: [
@@ -121,6 +126,7 @@ class _DetailsPageState extends State<DetailsPage> {
                             margin:const EdgeInsets.all(15.0),
 
                             decoration: BoxDecoration(
+                              border:widget.categoryParts![index].isSelected!?Border.all(color: widget.color!):null,
                                 borderRadius: BorderRadius.circular(20.0),
                                 image: DecorationImage(
                                     image: AssetImage('assets/imgs/'+widget.categoryParts![index].image!+'.png'),
