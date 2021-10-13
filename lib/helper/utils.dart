@@ -1,6 +1,7 @@
 import 'package:my_grocery_shop/helper/appcolors.dart';
 import 'package:my_grocery_shop/helper/icon_hepler.dart';
 import 'package:my_grocery_shop/model/category.dart';
+import 'package:my_grocery_shop/model/onboard_content.dart';
 import 'package:my_grocery_shop/model/subcategory.dart';
 
 class Utils{
@@ -189,6 +190,23 @@ class Utils{
           imageName: 'cat6',
           name: "Spices",
           subCategory: []
+      ),
+    ];
+  }
+
+  static List<OnBoardingContent> getOnBoarding(){
+    return [
+      OnBoardingContent(
+        message: "Fresh Product with a reasonable price",
+        img: 'onboard1'
+      ),
+      OnBoardingContent(
+        message: 'Home delivery facilities',
+        img: 'onboard2'
+      ),
+      OnBoardingContent(
+          message: "It's just like pick items from garden",
+          img: 'onboard3'
       ),
     ];
   }

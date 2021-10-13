@@ -1,6 +1,6 @@
 class OnBoardingContent{
   String? message;
-  String? msg;
+  String? img;
 
-  OnBoardingContent({this.message,this.msg});
+  OnBoardingContent({this.message,this.img});
 }
