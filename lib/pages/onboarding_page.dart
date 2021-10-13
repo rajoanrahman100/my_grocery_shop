@@ -4,6 +4,7 @@ import 'package:my_grocery_shop/helper/constants.dart';
 import 'package:my_grocery_shop/helper/icon_hepler.dart';
 import 'package:my_grocery_shop/helper/utils.dart';
 import 'package:my_grocery_shop/model/onboard_content.dart';
+import 'package:my_grocery_shop/pages/welcome_page.dart';
 import 'package:my_grocery_shop/widgets/icon_font.dart';
 
 class OnBoardingPage extends StatefulWidget {
@@ -116,7 +117,12 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
             Padding(
               padding: const EdgeInsets.all(15.0),
               child: MaterialButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => WelcomeScreen()),
+                  );
+                },
                 child:
                     const Text("SKIP", style: TextStyle(color: kWhiteColor, fontWeight: FontWeight.w600, fontSize: 20)),
                 color: kPrimaryColor,
