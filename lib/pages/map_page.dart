@@ -43,17 +43,13 @@ class _MapPageState extends State<MapPage> {
 
   @override
   void initState() {
-
     polylinePoints = PolylinePoints();
 
     //Set up initial location
     setInitialLocation();
     //Set up custom marker icon
     setSourceAndDestinationMarker();
-
-
   }
-
 
   void setInitialLocation() {
     currentLocation = LatLng(SOURCE_LOCATION.latitude, SOURCE_LOCATION.longitude);
@@ -170,15 +166,16 @@ class _MapPageState extends State<MapPage> {
         PointLatLng(currentLocation.latitude, currentLocation.longitude),
         PointLatLng(destinationLocation.latitude, destinationLocation.longitude));
 
-    debugPrint("result status:"+result.status.toString());
+    debugPrint("result status:" + result.status.toString());
 
-    if(result.status=="OK"){
+    if (result.status == "OK") {
       for (var element in result.points) {
         _polyLineCoordinates.add(LatLng(element.latitude, element.longitude));
       }
-      
+
       setState(() {
-        _polyLines.add(Polyline(polylineId:PolylineId("polyline"),color: Colors.red,points: _polyLineCoordinates,width: 10));
+        _polyLines.add(
+            Polyline(polylineId: PolylineId("polyline"), color: Colors.red, points: _polyLineCoordinates, width: 10));
       });
     }
   }

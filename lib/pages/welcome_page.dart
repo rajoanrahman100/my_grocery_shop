@@ -37,42 +37,50 @@ class WelcomeScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const SizedBox(height: 30,),
+                  const SizedBox(
+                    height: 30,
+                  ),
                   const Text(
                     "Grocerry Hut",
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 40,
-                        fontWeight: FontWeight.bold),
+                    style: TextStyle(color: Colors.white, fontSize: 40, fontWeight: FontWeight.bold),
                   ),
-                  const SizedBox(height: 40.0,),
+                  const SizedBox(
+                    height: 40.0,
+                  ),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 10.0),
                     child: MaterialButton(
-                      onPressed: (){
+                      onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(
-                              builder: (context) => CategoryListPage()),
+                          MaterialPageRoute(builder: (context) => CategoryListPage()),
                         );
                       },
                       shape: const StadiumBorder(),
                       height: 55,
                       minWidth: double.infinity,
                       color: const Color(0xFF80C038),
-                      child: const Text("Try Now",style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),
+                      child: const Text(
+                        "Try Now",
+                        style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
+                      ),
                     ),
                   ),
-                  const SizedBox(height: 20.0,),
+                  const SizedBox(
+                    height: 20.0,
+                  ),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 10.0),
                     child: MaterialButton(
-                      onPressed: (){},
-                      shape: const StadiumBorder(side: BorderSide(color: kPrimaryColor,width: 2)),
+                      onPressed: () {},
+                      shape: const StadiumBorder(side: BorderSide(color: kPrimaryColor, width: 2)),
                       height: 55,
                       minWidth: double.infinity,
                       color: Colors.transparent,
-                      child: const Text("Log In",style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),
+                      child: const Text(
+                        "Log In",
+                        style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
+                      ),
                     ),
                   )
                 ],

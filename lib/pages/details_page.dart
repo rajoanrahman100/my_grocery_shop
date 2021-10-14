@@ -255,24 +255,29 @@ class _DetailsPageState extends State<DetailsPage> {
                     ),
                   ),
                 ),
-                const SizedBox(height: 15.0,),
+                const SizedBox(
+                  height: 15.0,
+                ),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20.0),
                   child: MaterialButton(
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) =>  MapPage()),
+                        MaterialPageRoute(builder: (context) => MapPage()),
                       );
                     },
                     shape: const StadiumBorder(),
                     height: 55,
                     minWidth: double.infinity,
-                    color:  AppColors.DARK_GREEN,
+                    color: AppColors.DARK_GREEN,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: const [
-                        Icon(Icons.location_on_rounded,color: kWhiteColor,),
+                        Icon(
+                          Icons.location_on_rounded,
+                          color: kWhiteColor,
+                        ),
                         Text(
                           "Location",
                           style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),
@@ -281,7 +286,9 @@ class _DetailsPageState extends State<DetailsPage> {
                     ),
                   ),
                 ),
-                const SizedBox(height: 15.0,),
+                const SizedBox(
+                  height: 15.0,
+                ),
               ],
             ),
           ))

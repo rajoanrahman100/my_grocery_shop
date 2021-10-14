@@ -99,8 +99,9 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: List.generate(content.length, (index) {
                 return GestureDetector(
-                  onTap: (){
-                    _controller.animateTo(MediaQuery.of(context).size.width*index, duration: Duration(milliseconds: 500), curve: Curves.easeInOut);
+                  onTap: () {
+                    _controller.animateTo(MediaQuery.of(context).size.width * index,
+                        duration: Duration(milliseconds: 500), curve: Curves.easeInOut);
                   },
                   child: Container(
                     height: 10,
@@ -109,7 +110,8 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                     decoration: BoxDecoration(
                         color: kPrimaryColor,
                         shape: BoxShape.circle,
-                        border: Border.all(color: pageIndex==index ? kPrimaryColor : Theme.of(context).canvasColor, width: 2)),
+                        border: Border.all(
+                            color: pageIndex == index ? kPrimaryColor : Theme.of(context).canvasColor, width: 2)),
                   ),
                 );
               }),

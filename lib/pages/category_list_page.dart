@@ -55,11 +55,10 @@ class CategoryListPage extends StatelessWidget {
                             context,
                             MaterialPageRoute(
                                 builder: (context) => SelectedCategoryPage(
-                                      subCategoryList: categoryList[index].subCategory,
-                                  categoryName: categoryList[index].name!,
-                                  color:categoryList[index].color!,
-                                  iconName:categoryList[index].icon!
-                                    )),
+                                    subCategoryList: categoryList[index].subCategory,
+                                    categoryName: categoryList[index].name!,
+                                    color: categoryList[index].color!,
+                                    iconName: categoryList[index].icon!)),
                           );
                         },
                         child: Container(
@@ -100,7 +99,8 @@ class CategoryListPage extends StatelessWidget {
                                       ),
                                       Text(
                                         categoryList[index].name!,
-                                        style: const TextStyle(color: kWhiteColor, fontWeight: FontWeight.w500, fontSize: 25),
+                                        style: const TextStyle(
+                                            color: kWhiteColor, fontWeight: FontWeight.w500, fontSize: 25),
                                       )
                                     ],
                                   ),

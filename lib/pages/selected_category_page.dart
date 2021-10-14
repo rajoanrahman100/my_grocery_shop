@@ -12,7 +12,8 @@ class SelectedCategoryPage extends StatelessWidget {
   Color color;
   String iconName;
 
-  SelectedCategoryPage({required this.subCategoryList, required this.categoryName, required this.color, required this.iconName});
+  SelectedCategoryPage(
+      {required this.subCategoryList, required this.categoryName, required this.color, required this.iconName});
 
   @override
   Widget build(BuildContext context) {
@@ -72,9 +73,9 @@ class SelectedCategoryPage extends StatelessWidget {
                           MaterialPageRoute(
                               builder: (context) => DetailsPage(
                                     imageName: subCategoryList[index].imageName,
-                                color: subCategoryList[index].color,
-                                iconName: subCategoryList[index].icon,
-                                categoryParts: subCategoryList[index].categoryParts,
+                                    color: subCategoryList[index].color,
+                                    iconName: subCategoryList[index].icon,
+                                    categoryParts: subCategoryList[index].categoryParts,
                                   )),
                         );
                       },
