@@ -1,5 +1,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.my_grocery_shop">
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <!-- Include only if your app benefits from precise location access. -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+
    <application
         android:label="my_grocery_shop"
         android:icon="@mipmap/ic_launcher">
@@ -37,5 +44,8 @@
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
+       <meta-data
+           android:name="com.google.android.geo.API_KEY"
+           android:value="AIzaSyDAzloJ2i3aG6EEvbjf1himsgLU0p20wc0" />
     </application>
 </manifest>

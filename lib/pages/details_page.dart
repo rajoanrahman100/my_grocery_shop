@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:my_grocery_shop/helper/appcolors.dart';
 import 'package:my_grocery_shop/helper/constants.dart';
 import 'package:my_grocery_shop/model/subcategory.dart';
+import 'package:my_grocery_shop/pages/map_page.dart';
 import 'package:my_grocery_shop/widgets/category_icon.dart';
 
 class DetailsPage extends StatefulWidget {
@@ -258,7 +259,12 @@ class _DetailsPageState extends State<DetailsPage> {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20.0),
                   child: MaterialButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) =>  MapPage()),
+                      );
+                    },
                     shape: const StadiumBorder(),
                     height: 55,
                     minWidth: double.infinity,

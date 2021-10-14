@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_grocery_shop/helper/icon_hepler.dart';
 import 'package:my_grocery_shop/pages/category_list_page.dart';
+import 'package:my_grocery_shop/pages/map_page.dart';
 import 'package:my_grocery_shop/pages/onboarding_page.dart';
 import 'package:my_grocery_shop/pages/welcome_page.dart';
 import 'package:my_grocery_shop/widgets/icon_font.dart';
@@ -15,10 +16,10 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return  MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: SplashWidget(duration: 3,gotoPage: OnBoardingPage(),),
-      // home: OnBoardingPage(),
+      //  home: MapPage(),
       // home: CategoryListPage(),
     );
   }
