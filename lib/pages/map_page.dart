@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_polyline_points/flutter_polyline_points.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:my_grocery_shop/helper/constants.dart';
@@ -32,13 +33,27 @@ class _MapPageState extends State<MapPage> {
   late LatLng currentLocation;
   late LatLng destinationLocation;
 
+  final Set<Polyline> _polyLines = <Polyline>{};
+
+  //Coordinates for each of the polyline
+  final List<LatLng> _polyLineCoordinates = [];
+
+  //PolylinePoint reference
+  late PolylinePoints polylinePoints;
+
   @override
   void initState() {
+
+    polylinePoints = PolylinePoints();
+
     //Set up initial location
     setInitialLocation();
     //Set up custom marker icon
     setSourceAndDestinationMarker();
+
+
   }
+
 
   void setInitialLocation() {
     currentLocation = LatLng(SOURCE_LOCATION.latitude, SOURCE_LOCATION.longitude);
@@ -68,12 +83,16 @@ class _MapPageState extends State<MapPage> {
             tiltGesturesEnabled: false,
             initialCameraPosition: cameraPosition,
             markers: _markers,
+            polylines: _polyLines,
             onMapCreated: (controller) {
               //Call the controller
               _controller.complete(controller);
 
               //Show markers
               showMarkers();
+
+              //Show polyLines
+              setPolyLines();
             },
           ),
         ),
@@ -143,5 +162,24 @@ class _MapPageState extends State<MapPage> {
       _markers.add(
           Marker(markerId: const MarkerId("destinationPin"), position: destinationLocation, icon: destinationIcon));
     });
+  }
+
+  void setPolyLines() async {
+    PolylineResult result = await polylinePoints.getRouteBetweenCoordinates(
+        "AIzaSyDAzloJ2i3aG6EEvbjf1himsgLU0p20wc0",
+        PointLatLng(currentLocation.latitude, currentLocation.longitude),
+        PointLatLng(destinationLocation.latitude, destinationLocation.longitude));
+
+    debugPrint("result status:"+result.status.toString());
+
+    if(result.status=="OK"){
+      for (var element in result.points) {
+        _polyLineCoordinates.add(LatLng(element.latitude, element.longitude));
+      }
+      
+      setState(() {
+        _polyLines.add(Polyline(polylineId:PolylineId("polyline"),color: Colors.red,points: _polyLineCoordinates,width: 10));
+      });
+    }
   }
 }
