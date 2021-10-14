@@ -13,7 +13,7 @@ class SelectedCategoryPage extends StatelessWidget {
   String iconName;
 
   SelectedCategoryPage(
-      {required this.subCategoryList, required this.categoryName, required this.color, required this.iconName});
+      {Key? key, required this.subCategoryList, required this.categoryName, required this.color, required this.iconName}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +27,7 @@ class SelectedCategoryPage extends StatelessWidget {
           iconName: IconFontHelper.LOGO,
           color: AppColors.MAIN_COLOR,
         ),
-        iconTheme: IconThemeData(color: AppColors.MAIN_COLOR),
+        iconTheme:const IconThemeData(color: AppColors.MAIN_COLOR),
         actions: const [
           Icon(
             Icons.filter_alt_outlined,
@@ -40,7 +40,7 @@ class SelectedCategoryPage extends StatelessWidget {
       ),
       body: Column(
         children: [
-          SizedBox(
+          const SizedBox(
             height: 30,
           ),
           Row(
@@ -50,7 +50,7 @@ class SelectedCategoryPage extends StatelessWidget {
                 color: color,
                 iconName: iconName,
               ),
-              SizedBox(width: 10),
+              const SizedBox(width: 10),
               Text(
                 categoryName,
                 style: TextStyle(color: color, fontSize: 20),
