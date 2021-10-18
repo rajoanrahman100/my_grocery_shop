@@ -2,11 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:my_grocery_shop/helper/constants.dart';
 import 'package:my_grocery_shop/helper/icon_hepler.dart';
 import 'package:my_grocery_shop/pages/category_list_page.dart';
+import 'package:my_grocery_shop/service/loginservice.dart';
 import 'package:my_grocery_shop/widgets/icon_font.dart';
+import 'package:provider/provider.dart';
 
 class WelcomeScreen extends StatelessWidget {
+
+
+ // LogInService logInService=LogInService();
+
+
   @override
   Widget build(BuildContext context) {
+
+    //Call the provider
+    LogInService logInService=Provider.of<LogInService>(context,listen: false);
+
     return Scaffold(
       body: Container(
         color: Colors.black,
@@ -41,7 +52,7 @@ class WelcomeScreen extends StatelessWidget {
                     height: 30,
                   ),
                   const Text(
-                    "Grocerry Hut",
+                    "Grocery Hut",
                     style: TextStyle(color: Colors.white, fontSize: 40, fontWeight: FontWeight.bold),
                   ),
                   const SizedBox(
@@ -72,7 +83,15 @@ class WelcomeScreen extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 10.0),
                     child: MaterialButton(
-                      onPressed: () {},
+                      onPressed: () async{
+                        bool success=await logInService.signInWithGoogle();
+                        if(success){
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => CategoryListPage()),
+                          );
+                        }
+                      },
                       shape: const StadiumBorder(side: BorderSide(color: kPrimaryColor, width: 2)),
                       height: 55,
                       minWidth: double.infinity,

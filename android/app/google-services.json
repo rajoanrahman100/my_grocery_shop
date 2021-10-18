@@ -1,0 +1,97 @@
+{
+  "project_info": {
+    "project_number": "313916125758",
+    "project_id": "firestore-crud-74fde",
+    "storage_bucket": "firestore-crud-74fde.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:313916125758:android:eec9a05247349d99a4576f",
+        "android_client_info": {
+          "package_name": "com.example.flrestore_crud.host"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "313916125758-c24ldvo6rn2pfcdchjtrqfv0h61ee43v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBOKdYmj1wF0fUI6dMWPE6ML_siscgmgpU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "313916125758-c24ldvo6rn2pfcdchjtrqfv0h61ee43v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:313916125758:android:2c787f4fbf18425ca4576f",
+        "android_client_info": {
+          "package_name": "com.example.flutter_firestore.host"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "313916125758-c24ldvo6rn2pfcdchjtrqfv0h61ee43v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBOKdYmj1wF0fUI6dMWPE6ML_siscgmgpU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "313916125758-c24ldvo6rn2pfcdchjtrqfv0h61ee43v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:313916125758:android:ee270ba274aa9495a4576f",
+        "android_client_info": {
+          "package_name": "com.example.my_grocery_shop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "313916125758-c24ldvo6rn2pfcdchjtrqfv0h61ee43v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBOKdYmj1wF0fUI6dMWPE6ML_siscgmgpU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "313916125758-c24ldvo6rn2pfcdchjtrqfv0h61ee43v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
