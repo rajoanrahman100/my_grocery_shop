@@ -4,16 +4,22 @@ import 'package:my_grocery_shop/helper/constants.dart';
 import 'package:my_grocery_shop/helper/icon_hepler.dart';
 import 'package:my_grocery_shop/helper/utils.dart';
 import 'package:my_grocery_shop/model/category.dart';
+import 'package:my_grocery_shop/model/longinusermodel.dart';
 import 'package:my_grocery_shop/pages/selected_category_page.dart';
+import 'package:my_grocery_shop/service/loginservice.dart';
 import 'package:my_grocery_shop/widgets/category_icon.dart';
 import 'package:my_grocery_shop/widgets/categoty_bottom_bar.dart';
 import 'package:my_grocery_shop/widgets/icon_font.dart';
+import 'package:provider/provider.dart';
 
 class CategoryListPage extends StatelessWidget {
   List<Category> categoryList = Utils.getListOfCategory();
 
   @override
   Widget build(BuildContext context) {
+    LogInService logInService = Provider.of<LogInService>(context, listen: false);
+    LogInUserModel _userModel = logInService.userModel;
+
     return Scaffold(
         drawer: Drawer(),
         appBar: AppBar(
@@ -26,11 +32,15 @@ class CategoryListPage extends StatelessWidget {
             color: AppColors.MAIN_COLOR,
           ),
           iconTheme: IconThemeData(color: AppColors.MAIN_COLOR),
-          actions: const [
-            Icon(
-              Icons.filter_alt_outlined,
-              color: AppColors.MAIN_COLOR,
-            ),
+          actions: [
+            _userModel.photoUrl!.isEmpty
+                ? Icon(
+                    Icons.filter_alt_outlined,
+                    color: AppColors.MAIN_COLOR,
+                  )
+                : ClipOval(
+                    child: Image.network(_userModel.photoUrl!,height: 25,width: 259,fit: BoxFit.cover,),
+                  ),
             SizedBox(
               width: 10,
             )
